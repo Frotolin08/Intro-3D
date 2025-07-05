@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClonaCuboScript : MonoBehaviour
+public class ClonaCubo : MonoBehaviour
 {
     public GameObject cuboPrefab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,9 +17,9 @@ public class ClonaCuboScript : MonoBehaviour
     {
         
     }
+
     void ClonarCubo()
     {
         Instantiate(cuboPrefab);
-
     }
 }
