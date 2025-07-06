@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class HealthManager : MonoBehaviour
 {
     public int healthPoints;
@@ -20,6 +20,8 @@ public class HealthManager : MonoBehaviour
         if (healthPoints <= damagePoints)
         {
             //gameover
+            Debug.Log("Respawn");
+            SceneManager.LoadScene("FPS parkour");
             return;
         }
         Debug.Log("Damage taken");
