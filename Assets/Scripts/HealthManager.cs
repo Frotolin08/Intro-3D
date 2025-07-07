@@ -11,6 +11,7 @@ public class HealthManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        uiManager.UpdateHealth(maxHealthPoints);
         uiManager = FindObjectOfType<UIManager>();
         healthPoints = maxHealthPoints;
     }
