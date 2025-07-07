@@ -5,15 +5,17 @@ using UnityEngine;
 public class interactionaREA : MonoBehaviour
 {
     public GameObject interactionMsg;
-    public GameObject Caja;
-    public ScoreManager scoreManager;
-    public MercaderiaScript mercaderiaScript;
+    public ScoreManager ScoreManagerBueno;
+
+    public MercaderiaScript Caja;
+   
     // Start is called before the first frame update
     void Start()
     {
+        ScoreManagerBueno =  FindObjectOfType<ScoreManager>();
+        
         interactionMsg.SetActive(false);
-        scoreManager = FindObjectOfType<ScoreManager>();
-        mercaderiaScript = GetComponent<MercaderiaScript>();
+    
     }
 
     // Update is called once per frame
@@ -23,7 +25,7 @@ public class interactionaREA : MonoBehaviour
         {
             if (Caja)
             {
-                scoreManager.AddScore(mercaderiaScript.scorePoints);
+                ScoreManagerBueno.AddScore(Caja.scorePoints);
                 Destroy(Caja.gameObject);
                 
                 StopInteraction();
@@ -33,8 +35,9 @@ public class interactionaREA : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log(other.gameObject.name);
-
-        Caja = other.gameObject;
+        Caja = other.GetComponent<MercaderiaScript>();
+       
+       
         if (Caja)
         { interactionMsg.SetActive(true); }
 
