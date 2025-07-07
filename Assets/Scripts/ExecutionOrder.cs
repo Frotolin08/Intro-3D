@@ -6,22 +6,26 @@ public class ExecutionOrder : MonoBehaviour
 {
     void Awake()
     {
+
+
+
         Debug.Log("Awake");
     }
     void Start()
     {
-        Debug.Log("Start");        
+        Debug.Log("start");        
     }
     void Update()
     {
-        Debug.Log("Update");
+        Debug.Log("update");
     }
     void FixedUpdate()
     {
-        Debug.Log("FixedUpdate");
+        Debug.Log("fixedUpdate");
     }
     void OnEnable()
     {
-        Debug.Log("OnEnable");
+        Debug.Log("onEable");
+
     }
 }

@@ -6,12 +6,13 @@ public class interactionaREA : MonoBehaviour
 {
     public GameObject interactionMsg;
     public ScoreManager ScoreManagerBueno;
-
+    private AudioSource audioSource;
     public MercaderiaScript Caja;
    
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         ScoreManagerBueno =  FindObjectOfType<ScoreManager>();
         
         interactionMsg.SetActive(false);
@@ -25,6 +26,7 @@ public class interactionaREA : MonoBehaviour
         {
             if (Caja)
             {
+                audioSource.Play();
                 ScoreManagerBueno.AddScore(Caja.scorePoints);
                 Destroy(Caja.gameObject);
                 

@@ -17,16 +17,7 @@ public class WaitNSeconds : MonoBehaviour
     // Update is called once per frame
     void Update()
     {             
-        //if (timeElapsed >= timeToWait)
-        //{
-        //    Debug.Log("Tiempo cumplido");
-        //    ElevateCube();
-        //    timeElapsed = 0;
-        //}
-        //else
-        //{
-        //    Debug.Log(timeElapsed += Time.deltaTime);
-        //}
+        
     }
 
     IEnumerator WaitUntilElevate()
